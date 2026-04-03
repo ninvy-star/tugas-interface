@@ -31,7 +31,7 @@ abstract class Pembayaran {
     public function totalBayar() {
         $diskon = $this->hitungDiskon();
         $subtotal = $this->jumlah - $diskon;
-        $pajak = $subtotal * 0.11;
+        $pajak = $this->hitungPajak();
 
         return $subtotal + $pajak;
 
